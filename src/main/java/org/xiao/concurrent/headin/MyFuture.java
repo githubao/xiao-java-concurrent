@@ -51,21 +51,4 @@ public class MyFuture {
 
 }
 
-class MyCallTask implements Callable<String> {
-    private String src;
 
-    public MyCallTask() {
-    }
-
-    public MyCallTask(String src) {
-        this.src = src;
-    }
-
-
-    @Override
-    public String call() throws Exception {
-        int elapsed = (int) (Math.random() * 1000);
-        Thread.sleep(elapsed);
-        return String.format("%s elapsed %s", src, elapsed);
-    }
-}

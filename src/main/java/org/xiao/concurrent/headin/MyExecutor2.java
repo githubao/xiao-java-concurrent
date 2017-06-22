@@ -2,7 +2,7 @@ package org.xiao.concurrent.headin;
 
 
 /**
- * 第一个并发程序
+ * executor service 使用submit提交任务
  *
  * @author BaoQiang
  * @version 2.0
