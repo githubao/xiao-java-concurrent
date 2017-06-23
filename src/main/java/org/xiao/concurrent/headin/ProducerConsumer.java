@@ -79,7 +79,16 @@ class Consumer implements Runnable {
                 }
                 Task task = buffer.remove(0);
                 buffer.notifyAll();
-                System.out.println(String.format("Consumer[%s] get %s", Thread.currentThread().getName(), task));
+
+//                模拟耗时的处理操作
+                int elapsed = (int) (Math.random() * 10);
+                try {
+                    Thread.sleep(elapsed);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println(String.format("Consumer[%s] get %s, elapsed %s", Thread.currentThread().getName(), task, elapsed));
             }
         }
     }
@@ -111,6 +120,9 @@ class Producer implements Runnable {
                     buffer.add(task);
                     buffer.notifyAll();
                     System.out.println(String.format("Producer[%s] put %s", Thread.currentThread().getName(), task));
+                } else {
+                    System.out.println("Task Down");
+                    System.exit(0);
                 }
 
             }
