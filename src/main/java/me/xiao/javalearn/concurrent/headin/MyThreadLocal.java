@@ -1,4 +1,4 @@
-package org.xiao.concurrent.headin;
+package me.xiao.javalearn.concurrent.headin;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -12,6 +12,6 @@ import java.text.SimpleDateFormat;
  */
 
 public class MyThreadLocal {
-    private static ThreadLocal<DateFormat> df = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-M-dd"));
+    private static ThreadLocal<DateFormat> df = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd"));
 
 }

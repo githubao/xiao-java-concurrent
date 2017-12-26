@@ -1,4 +1,4 @@
-package org.xiao.concurrent.headin;
+package me.xiao.javalearn.concurrent.headin;
 
 import java.util.List;
 import java.util.concurrent.*;
